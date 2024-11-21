@@ -1,18 +1,64 @@
 # .gitignore
 
+# --------------------
 # Python
+# --------------------
 __pycache__/
 *.py[cod]
 *$py.class
 
-# Virtual Environment
+# --------------------
+# Virtual Environments
+# --------------------
 venv/
 ENV/
 env/
 .venv/
 
+# --------------------
 # Environment Variables
+# --------------------
 .env
 
-# Others
+# --------------------
+# Database Files
+# --------------------
 *.sqlite3
+
+# --------------------
+# IDEs and Editors
+# --------------------
+# VSCode
+.vscode/
+# PyCharm
+.idea/
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# --------------------
+# OS-Specific Files
+# --------------------
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# --------------------
+# Logs and Temporary Files
+# --------------------
+*.log
+*.tmp
+*.swp
+*.swo
+
+# --------------------
+# Other Exclusions
+# --------------------
+*.bak
+*.backup

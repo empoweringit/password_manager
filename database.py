@@ -34,6 +34,7 @@ def get_connection():
     try:
         conn = connection_pool.getconn()
         if conn:
+            logger.debug("Connection retrieved from pool.")
             return conn
     except psycopg2.Error as e:
         logger.error(f"Error getting connection from pool: {e}")
@@ -45,5 +46,16 @@ def return_connection(conn):
     """
     try:
         connection_pool.putconn(conn)
+        logger.debug("Connection returned to pool.")
     except psycopg2.Error as e:
         logger.error(f"Error returning connection to pool: {e}")
+
+def close_all_connections():
+    """
+    Closes all connections in the pool.
+    """
+    try:
+        connection_pool.closeall()
+        logger.info("All connections in the pool have been closed.")
+    except psycopg2.Error as e:
+        logger.error(f"Error closing connections: {e}")
